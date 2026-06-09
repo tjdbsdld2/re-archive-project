@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Re:Archive | 사진 없는 기억을 다시 장면으로 보관하다</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <button class="brand-mark" type="button" data-page-target="home">Re:Archive</button>
+          <nav class="topnav" aria-label="주요 메뉴">
+            <button class="nav-link is-active" type="button" data-page-target="home">홈</button>
+            <button class="nav-link" type="button" data-page-target="restore">기억 복원</button>
+            <button class="nav-link" type="button" data-page-target="my-archive">나의 아카이브</button>
+            <button class="nav-link" type="button" data-page-target="explore">아카이브 탐색</button>
+            <button class="nav-link" type="button" data-page-target="about">서비스 소개</button>
+          </nav>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="page-screen is-active" data-page-screen="home" id="page-home">
+          <div class="page-layout home-layout">
+            <div class="hero-copy">
+              <p class="eyebrow">MEMORY RESTORATION SERVICE</p>
+              <h1>Re:Archive</h1>
+              <p class="hero-tagline">사진은 없지만, 기억은 남아 있는 순간들이 있습니다.</p>
+              <p class="hero-description">
+                오래된 일기와 흐릿한 기억을 장면 단위로 정리하고, 다시 꺼내볼 수 있는 나만의
+                아카이브로 보관하세요.
+              </p>
+              <div class="hero-actions">
+                <button class="button button-primary" type="button" data-page-target="restore">
+                  기억 복원하기
+                </button>
+                <button class="button button-secondary" type="button" data-page-target="explore">
+                  아카이브 탐색하기
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-concept">
+              <div class="concept-stack">
+                <article class="paper-card concept-card concept-card-main">
+                  <span class="card-tag">기억 정리 흐름</span>
+                  <h2>오래된 기록이 하나의 기억 앨범이 됩니다</h2>
+                  <p>
+                    오래된 일기 한 문장을 시작으로, 장면 기록과 기억 필름까지 자연스럽게 이어지는
+                    흐름을 한눈에 볼 수 있습니다.
+                  </p>
+                  <div class="concept-flow">
+                    <div class="concept-step">
+                      <strong>Old Diary</strong>
+                      <span>원문 기록 입력</span>
+                    </div>
+                    <div class="concept-step">
+                      <strong>Scene Extracted</strong>
+                      <span>장면 단위 분할</span>
+                    </div>
+                    <div class="concept-step">
+                      <strong>Memory Film</strong>
+                      <span>다시 보는 기억 필름</span>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="concept-side">
+                  <article class="paper-card concept-note">
+                    <span class="card-tag">기억 정보</span>
+                    <h3>날짜, 장소, 감정, 주제어</h3>
+                    <p>기억마다 식별번호와 메타데이터가 붙고, 하나의 앨범처럼 정리됩니다.</p>
+                  </article>
+                  <article class="paper-card concept-note concept-note-soft">
+                    <span class="card-tag">보관 공간</span>
+                    <h3>나의 아카이브와 탐색 갤러리</h3>
+                    <p>개인 기록과 공개된 샘플 아카이브를 각각 다른 화면에서 살펴볼 수 있습니다.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-screen" data-page-screen="restore" id="page-restore" hidden>
+          <div class="page-header">
+            <p class="eyebrow">기억 복원</p>
+            <h2>오래된 기억을 입력해주세요</h2>
+            <p>
+              사진으로 남지 않은 하루, 오래된 일기장 속 문장, 다시 보고 싶은 기억을 자유롭게
+              적어주세요.
+            </p>
+          </div>
+
+          <div class="restore-layout">
+            <article class="paper-card journal-card">
+              <label class="journal-label" for="memoryInput">기억 원문</label>
+              <textarea
+                id="memoryInput"
+                name="memoryInput"
+                placeholder="예: 오래된 일기장에 남아 있는 하루를 붙여넣어 주세요."
+              ></textarea>
+              <p class="input-helper" id="inputHelper">
+                입력한 기억은 장면 단위로 정리되어 나의 아카이브에 저장됩니다.
+              </p>
+              <div class="journal-actions">
+                <button class="button button-secondary" type="button" id="fillExample">
+                  예시 기억 불러오기
+                </button>
+                <button class="button button-primary" type="button" id="restoreButton">
+                  AI로 기억 복원하기
+                </button>
+              </div>
+            </article>
+
+            <aside class="paper-card restore-guide">
+              <span class="card-tag">안내</span>
+              <h3>기억이 정리되는 방식</h3>
+              <ol class="guide-list">
+                <li>오래된 일기나 기억의 조각을 입력합니다.</li>
+                <li>Re:Archive가 감정과 장소, 장면을 정리합니다.</li>
+                <li>장면마다 고유한 기록 번호가 붙습니다.</li>
+                <li>완성된 기억은 나의 아카이브에 저장됩니다.</li>
+              </ol>
+            </aside>
+          </div>
+        </section>
+
+        <section class="page-screen page-screen-loading" data-page-screen="loading" id="page-loading" hidden>
+          <div class="loading-shell paper-card">
+            <p class="eyebrow">기억 정리 중</p>
+            <h2>기억을 복원하는 중입니다</h2>
+            <p class="loading-copy">
+              입력된 일기를 원자료로 분석하고, 장면 단위의 아카이브를 구성하고 있습니다.
+            </p>
+            <div class="loading-bar" aria-hidden="true">
+              <span class="loading-bar-fill" id="loadingBarFill"></span>
+            </div>
+            <ul class="loading-steps" id="loadingSteps">
+              <li class="loading-step" data-loading-step>
+                <span class="loading-check"></span>
+                <span>원자료 분석 중</span>
+              </li>
+              <li class="loading-step" data-loading-step>
+                <span class="loading-check"></span>
+                <span>감정과 장소 추출 중</span>
+              </li>
+              <li class="loading-step" data-loading-step>
+                <span class="loading-check"></span>
+                <span>장면 단위 분할 중</span>
+              </li>
+              <li class="loading-step" data-loading-step>
+                <span class="loading-check"></span>
+                <span>아카이브 식별번호 생성 중</span>
+              </li>
+              <li class="loading-step" data-loading-step>
+                <span class="loading-check"></span>
+                <span>기억 필름 구성 중</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="page-screen" data-page-screen="my-archive" id="page-my-archive" hidden>
+          <div class="page-header">
+            <p class="eyebrow">나의 아카이브</p>
+            <h2>나의 아카이브</h2>
+            <p>
+              입력한 기억은 이곳에 하나의 앨범으로 저장됩니다.
+            </p>
+            <p>
+              아직 비어 있어도 괜찮아요. 오래된 하루를 하나씩 꺼내 나만의 아카이브를 채워보세요.
+            </p>
+          </div>
+
+          <div class="archive-summary paper-card">
+            <div>
+              <span class="card-tag">앨범 보관함</span>
+              <h3>기억 앨범 보관함</h3>
+            </div>
+            <p id="archiveShelfStatus">아직 저장된 기억이 없습니다.</p>
+          </div>
+
+          <div class="archive-stage">
+            <article class="paper-card archive-empty" id="archiveEmpty">
+              <span class="empty-badge">Empty Shelf</span>
+              <h3>아직 저장된 기억이 없습니다.</h3>
+              <p>오래된 일기나 기억의 조각을 입력하면, 이곳에 나만의 기억 앨범이 만들어집니다.</p>
+              <div class="album-actions">
+                <button class="button button-secondary" type="button" id="emptyArchiveAction">
+                  첫 기억 복원하기
+                </button>
+              </div>
+            </article>
+
+            <article class="paper-card album-card" id="albumCard" hidden>
+              <figure class="album-cover media-frame">
+                <img src="assets/scene02.png" alt="대천 바다에 간 날 대표 장면" loading="lazy" />
+                <figcaption class="media-fallback">
+                  <span>대표 장면</span>
+                  <strong>대천 바다에 간 날</strong>
+                </figcaption>
+                <span class="album-badge">Archived</span>
+              </figure>
+
+              <div class="album-info">
+                <div class="album-heading">
+                  <div>
+                    <p class="meta-label">기록 번호</p>
+                    <h3>RE-20220306</h3>
+                  </div>
+                  <span class="scene-count">5 scenes</span>
+                </div>
+                <div class="album-title">
+                  <h4>대천 바다에 간 날</h4>
+                  <p>친구와 함께 바다에 다녀온 하루가 하나의 기억 앨범으로 정리되었습니다.</p>
+                </div>
+                <div class="album-meta">
+                  <div class="meta-chip-block">
+                    <span class="meta-label">날짜</span>
+                    <p>2022.03.06</p>
+                  </div>
+                  <div class="meta-chip-block">
+                    <span class="meta-label">장소</span>
+                    <p>대천 바닷가</p>
+                  </div>
+                  <div class="meta-chip-block">
+                    <span class="meta-label">감정</span>
+                    <p>해방감, 즐거움, 힐링, 아쉬움</p>
+                  </div>
+                </div>
+                <div class="album-actions">
+                  <button class="button button-primary" type="button" id="openAlbumButton">
+                    앨범 열기
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-screen" data-page-screen="explore" id="page-explore" hidden>
+          <div class="page-header">
+            <p class="eyebrow">아카이브 탐색</p>
+            <h2>아카이브 탐색</h2>
+            <p>
+              다른 사람들이 남긴 사적인 기억 아카이브를 둘러보는 화면입니다. 짧은 설명과 감정 태그를
+              통해 한 장면의 결을 먼저 느낄 수 있습니다.
+            </p>
+          </div>
+
+          <div class="explore-grid">
+            <button class="paper-card explore-card" type="button" data-preview-index="0">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20180302</strong>
+              <h3>중학교 입학식 날</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">낯섦</span>
+                <span class="emotion-chip">긴장</span>
+                <span class="emotion-chip">설렘</span>
+              </div>
+              <p>처음 입은 교복과 낯선 교실, 어색하게 앉아 있던 첫날의 기억.</p>
+            </button>
+
+            <button class="paper-card explore-card" type="button" data-preview-index="1">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20201115</strong>
+              <h3>고등학교 야자 끝나고 먹은 컵라면</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">피곤함</span>
+                <span class="emotion-chip">우정</span>
+                <span class="emotion-chip">따뜻함</span>
+              </div>
+              <p>늦은 밤 친구들과 편의점 앞에서 먹던 컵라면의 기억.</p>
+            </button>
+
+            <button class="paper-card explore-card" type="button" data-preview-index="2">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20160505</strong>
+              <h3>우리 딸 지우가 처음 동물원에 간 날</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">기쁨</span>
+                <span class="emotion-chip">신기함</span>
+                <span class="emotion-chip">애틋함</span>
+              </div>
+              <p>작은 손으로 유리창을 짚고 동물을 바라보던 아이의 첫 동물원 기억.</p>
+            </button>
+
+            <button class="paper-card explore-card" type="button" data-preview-index="3">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20191224</strong>
+              <h3>가족이랑 처음 케이크 만든 크리스마스</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">따뜻함</span>
+                <span class="emotion-chip">소란스러움</span>
+                <span class="emotion-chip">행복</span>
+              </div>
+              <p>모양은 삐뚤었지만 오래 기억에 남은 가족의 겨울밤.</p>
+            </button>
+
+            <button class="paper-card explore-card" type="button" data-preview-index="4">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20220718</strong>
+              <h3>할머니 집 마당에서 수박 먹던 오후</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">여름</span>
+                <span class="emotion-chip">그리움</span>
+                <span class="emotion-chip">평온</span>
+              </div>
+              <p>선풍기 바람과 마당 냄새, 손에 묻은 수박물이 남아 있는 기억.</p>
+            </button>
+
+            <button class="paper-card explore-card" type="button" data-preview-index="5">
+              <span class="card-tag">공개 아카이브</span>
+              <strong class="explore-id">RE-20230603</strong>
+              <h3>친구들과 마지막으로 교복 입고 찍은 사진</h3>
+              <div class="emotion-row">
+                <span class="emotion-chip">아쉬움</span>
+                <span class="emotion-chip">장난스러움</span>
+                <span class="emotion-chip">청춘</span>
+              </div>
+              <p>졸업 전, 아무렇지 않게 웃었지만 나중에는 오래 남은 하루.</p>
+            </button>
+          </div>
+        </section>
+
+        <section class="page-screen" data-page-screen="about" id="page-about" hidden>
+          <div class="page-header">
+            <p class="eyebrow">서비스 안내</p>
+            <h2>서비스 소개</h2>
+            <p>
+              Re:Archive는 사진으로 남지 않은 기억을 다시 꺼내는 공간입니다. 오래된 일기나 기억의
+              조각을 입력하면, 그 안에 담긴 감정과 장소, 장면들이 하나씩 정리됩니다. 그렇게 정리된
+              기억은 고유한 기록 번호를 가진 앨범으로 저장되고, 언제든 다시 펼쳐볼 수 있는 나만의
+              아카이브가 됩니다.
+            </p>
+            <p>
+              모든 기억이 사진으로 남지는 않습니다. 어떤 하루는 오래된 문장으로, 어떤 장면은 흐릿한
+              감각으로만 남아 있습니다. Re:Archive는 그런 기억들을 다시 꺼내어 장면별로 보관할 수
+              있도록 돕습니다.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <section class="paper-card about-block">
+              <span class="card-tag">기억의 흐름</span>
+              <h3>기억이 아카이브되는 과정</h3>
+              <div class="process-grid">
+                <article class="process-card">
+                  <span class="process-step">01</span>
+                  <h4>기억 입력</h4>
+                  <p>오래된 일기나 기억의 조각을 적습니다.</p>
+                </article>
+                <article class="process-card">
+                  <span class="process-step">02</span>
+                  <h4>기억 정리</h4>
+                  <p>감정, 장소, 사건, 사물을 바탕으로 하루의 흐름을 정리합니다.</p>
+                </article>
+                <article class="process-card">
+                  <span class="process-step">03</span>
+                  <h4>장면 보관</h4>
+                  <p>기억 속 장면마다 고유한 기록 번호와 설명이 붙습니다.</p>
+                </article>
+                <article class="process-card">
+                  <span class="process-step">04</span>
+                  <h4>기억 필름</h4>
+                  <p>장면들이 모여 하나의 기억 필름처럼 이어집니다.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="paper-card about-block">
+              <span class="card-tag">기억 보관 방식</span>
+              <h3>기억이 저장되는 방식</h3>
+              <div class="reference-grid">
+                <article class="reference-card">
+                  <h4>원자료</h4>
+                  <p>오래된 일기와 기억의 조각</p>
+                </article>
+                <article class="reference-card">
+                  <h4>상위 기록</h4>
+                  <p>하나의 날짜 또는 하루 단위 기억</p>
+                </article>
+                <article class="reference-card">
+                  <h4>하위 기록</h4>
+                  <p>일기 속 장면 단위</p>
+                </article>
+                <article class="reference-card">
+                  <h4>메타데이터</h4>
+                  <p>날짜, 장소, 감정, 주제어, 설명</p>
+                </article>
+                <article class="reference-card">
+                  <h4>제공 방식</h4>
+                  <p>개인 아카이브와 공개 탐색 갤러리</p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Re:Archive</p>
+        <span>사진 없는 기억을 다시 장면으로 보관하다</span>
+      </footer>
+    </div>
+
+    <div class="modal" id="albumModal" hidden>
+      <div class="modal-backdrop" data-close-modal="album"></div>
+      <div class="modal-panel modal-panel-wide" role="dialog" aria-modal="true" aria-labelledby="albumModalTitle">
+        <div class="modal-header">
+          <div>
+            <span class="card-tag">저장된 기억 앨범</span>
+            <h2 id="albumModalTitle">대천 바다에 간 날</h2>
+          </div>
+          <button class="modal-close" type="button" id="closeAlbumModal" aria-label="앨범 닫기">
+            닫기
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <section class="paper-card modal-meta-card">
+            <div class="modal-meta-top">
+              <div>
+                <p class="meta-label">기록 번호</p>
+                <h3>RE-20220306</h3>
+              </div>
+              <span class="album-badge">Archived</span>
+            </div>
+            <div class="modal-meta-grid">
+              <div class="meta-chip-block">
+                <span class="meta-label">기록명</span>
+                <p>대천 바다에 간 날</p>
+              </div>
+              <div class="meta-chip-block">
+                <span class="meta-label">기록 유형</span>
+                <p>개인 일기 / 기억 기록 / 감정 아카이브</p>
+              </div>
+              <div class="meta-chip-block">
+                <span class="meta-label">기록 날짜</span>
+                <p>2022.03.06</p>
+              </div>
+              <div class="meta-chip-block">
+                <span class="meta-label">장소</span>
+                <p>대천 바닷가</p>
+              </div>
+              <div class="meta-chip-block">
+                <span class="meta-label">등장 인물</span>
+                <p>나, 정희</p>
+              </div>
+              <div class="meta-chip-block">
+                <span class="meta-label">주요 감정</span>
+                <p>해방감, 즐거움, 힐링, 아쉬움, 충만함</p>
+              </div>
+              <div class="meta-chip-block meta-chip-block-wide">
+                <span class="meta-label">주제어</span>
+                <p>바다, 드라이브, 친구, 짚라인, 조개구이, 휴식, 힐링</p>
+              </div>
+              <div class="meta-chip-block meta-chip-block-wide">
+                <span class="meta-label">보존 가치</span>
+                <p>
+                  친구와 함께 대천 바다에 다녀온 하루를 기록한 개인 기억. 바다를 보며 느낀 해방감,
+                  갑작스러운 짚라인 체험, 저녁 식사와 휴식에 대한 생각의 변화가 담겨 있다.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div class="detail-tabs" role="tablist" aria-label="앨범 상세 탭">
+            <button class="tab-button is-active" type="button" data-album-tab="scenes">장면 아카이브</button>
+            <button class="tab-button" type="button" data-album-tab="film">Memory Film</button>
+          </div>
+
+          <section class="tab-panel" data-tab-panel="scenes">
+            <div class="scene-carousel">
+              <button class="carousel-nav" type="button" id="prevSceneButton" aria-label="이전 장면">
+                이전
+              </button>
+
+              <article class="paper-card scene-detail-card">
+                <figure class="scene-detail-media media-frame" id="sceneDetailMedia">
+                  <img id="sceneDetailImage" src="assets/scene01.png" alt="장면 이미지" />
+                  <figcaption class="media-fallback">
+                    <span id="sceneFallbackId">RE-20220306-S01</span>
+                    <strong id="sceneFallbackTitle">조수석에서 잠든 길</strong>
+                  </figcaption>
+                </figure>
+                <div class="scene-detail-copy">
+                  <div class="scene-detail-top">
+                    <span class="card-tag" id="sceneDetailId">RE-20220306-S01</span>
+                    <span class="scene-counter" id="sceneCounter">1 / 5</span>
+                  </div>
+                  <h3 id="sceneDetailTitle">조수석에서 잠든 길</h3>
+                  <p class="scene-type" id="sceneDetailType">이동 장면</p>
+                  <p class="scene-emotions" id="sceneDetailEmotions">피곤함, 편안함, 미안함</p>
+                  <p class="scene-description" id="sceneDetailDescription">
+                    정희가 운전하는 차를 타고 대천으로 향하는 길. 밤을 새운 화자는 조수석에서 잠들어 있다.
+                  </p>
+                </div>
+              </article>
+
+              <button class="carousel-nav" type="button" id="nextSceneButton" aria-label="다음 장면">
+                다음
+              </button>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-tab-panel="film" hidden>
+            <article class="paper-card film-card">
+              <div class="film-card-copy">
+                <span class="card-tag">Memory Film</span>
+                <h3>기억 필름</h3>
+                <p>저장된 장면들을 하나의 흐름으로 다시 볼 수 있습니다.</p>
+              </div>
+              <div class="film-player is-fallback" id="filmPlayer">
+                <video id="memoryFilm" controls preload="metadata" playsinline>
+                  <source src="assets/archive-film.mp4" type="video/mp4" />
+                </video>
+                <div class="film-placeholder" id="filmPlaceholder">
+                  <span class="card-tag">Memory Film</span>
+                  <strong>아직 기억 필름이 업로드되지 않았습니다.</strong>
+                  <p>기억 필름이 준비되면 이곳에서 바로 재생됩니다.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="previewModal" hidden>
+      <div class="modal-backdrop" data-close-modal="preview"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+        <div class="modal-header">
+          <div>
+            <span class="card-tag">공개 아카이브</span>
+            <h2 id="previewTitle">중학교 입학식 날</h2>
+          </div>
+          <button class="modal-close" type="button" id="closePreviewModal" aria-label="미리보기 닫기">
+            닫기
+          </button>
+        </div>
+        <div class="modal-body preview-body">
+          <strong class="explore-id" id="previewId">RE-20180302</strong>
+          <div class="emotion-row" id="previewEmotionRow"></div>
+          <p id="previewDescription">
+            처음 입은 교복과 낯선 교실, 어색하게 앉아 있던 첫날의 기억.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
