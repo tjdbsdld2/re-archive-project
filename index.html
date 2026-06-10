@@ -251,79 +251,7 @@
             </p>
           </div>
 
-          <div class="explore-grid">
-            <button class="paper-card explore-card" type="button" data-preview-index="0">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20180302</strong>
-              <h3>중학교 입학식 날</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">낯섦</span>
-                <span class="emotion-chip">긴장</span>
-                <span class="emotion-chip">설렘</span>
-              </div>
-              <p>처음 입은 교복과 낯선 교실, 어색하게 앉아 있던 첫날의 기억.</p>
-            </button>
-
-            <button class="paper-card explore-card" type="button" data-preview-index="1">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20201115</strong>
-              <h3>고등학교 야자 끝나고 먹은 컵라면</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">피곤함</span>
-                <span class="emotion-chip">우정</span>
-                <span class="emotion-chip">따뜻함</span>
-              </div>
-              <p>늦은 밤 친구들과 편의점 앞에서 먹던 컵라면의 기억.</p>
-            </button>
-
-            <button class="paper-card explore-card" type="button" data-preview-index="2">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20160505</strong>
-              <h3>우리 딸 지우가 처음 동물원에 간 날</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">기쁨</span>
-                <span class="emotion-chip">신기함</span>
-                <span class="emotion-chip">애틋함</span>
-              </div>
-              <p>작은 손으로 유리창을 짚고 동물을 바라보던 아이의 첫 동물원 기억.</p>
-            </button>
-
-            <button class="paper-card explore-card" type="button" data-preview-index="3">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20191224</strong>
-              <h3>가족이랑 처음 케이크 만든 크리스마스</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">따뜻함</span>
-                <span class="emotion-chip">소란스러움</span>
-                <span class="emotion-chip">행복</span>
-              </div>
-              <p>모양은 삐뚤었지만 오래 기억에 남은 가족의 겨울밤.</p>
-            </button>
-
-            <button class="paper-card explore-card" type="button" data-preview-index="4">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20220718</strong>
-              <h3>할머니 집 마당에서 수박 먹던 오후</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">여름</span>
-                <span class="emotion-chip">그리움</span>
-                <span class="emotion-chip">평온</span>
-              </div>
-              <p>선풍기 바람과 마당 냄새, 손에 묻은 수박물이 남아 있는 기억.</p>
-            </button>
-
-            <button class="paper-card explore-card" type="button" data-preview-index="5">
-              <span class="card-tag">공개 아카이브</span>
-              <strong class="explore-id">RE-20230603</strong>
-              <h3>친구들과 마지막으로 교복 입고 찍은 사진</h3>
-              <div class="emotion-row">
-                <span class="emotion-chip">아쉬움</span>
-                <span class="emotion-chip">장난스러움</span>
-                <span class="emotion-chip">청춘</span>
-              </div>
-              <p>졸업 전, 아무렇지 않게 웃었지만 나중에는 오래 남은 하루.</p>
-            </button>
-          </div>
+          <div class="explore-grid" id="exploreGrid"></div>
         </section>
 
         <section class="page-screen" data-page-screen="about" id="page-about" hidden>
@@ -412,7 +340,7 @@
       <div class="modal-panel modal-panel-wide" role="dialog" aria-modal="true" aria-labelledby="albumModalTitle">
         <div class="modal-header">
           <div>
-            <span class="card-tag">저장된 기억 앨범</span>
+            <span class="card-tag" id="albumModalBadge">저장된 기억 앨범</span>
             <h2 id="albumModalTitle">대천 바다에 간 날</h2>
           </div>
           <button class="modal-close" type="button" id="closeAlbumModal" aria-label="앨범 닫기">
@@ -425,42 +353,42 @@
             <div class="modal-meta-top">
               <div>
                 <p class="meta-label">기록 번호</p>
-                <h3>RE-20220306</h3>
+                <h3 id="modalRecordId">RE-20220306</h3>
               </div>
-              <span class="album-badge">Archived</span>
+              <span class="album-badge" id="modalStatusBadge">Archived</span>
             </div>
             <div class="modal-meta-grid">
               <div class="meta-chip-block">
                 <span class="meta-label">기록명</span>
-                <p>대천 바다에 간 날</p>
+                <p id="modalRecordTitle">대천 바다에 간 날</p>
               </div>
-              <div class="meta-chip-block">
+              <div class="meta-chip-block" id="modalRecordTypeBlock">
                 <span class="meta-label">기록 유형</span>
-                <p>개인 일기 / 기억 기록 / 감정 아카이브</p>
+                <p id="modalRecordType">개인 일기 / 기억 기록 / 감정 아카이브</p>
               </div>
               <div class="meta-chip-block">
                 <span class="meta-label">기록 날짜</span>
-                <p>2022.03.06</p>
+                <p id="modalRecordDate">2022.03.06</p>
               </div>
               <div class="meta-chip-block">
                 <span class="meta-label">장소</span>
-                <p>대천 바닷가</p>
+                <p id="modalRecordLocation">대천 바닷가</p>
               </div>
-              <div class="meta-chip-block">
+              <div class="meta-chip-block" id="modalPeopleBlock">
                 <span class="meta-label">등장 인물</span>
-                <p>나, 정희</p>
+                <p id="modalRecordPeople">나, 정희</p>
               </div>
               <div class="meta-chip-block">
                 <span class="meta-label">주요 감정</span>
-                <p>해방감, 즐거움, 힐링, 아쉬움, 충만함</p>
+                <p id="modalRecordEmotions">해방감, 즐거움, 힐링, 아쉬움, 충만함</p>
               </div>
               <div class="meta-chip-block meta-chip-block-wide">
                 <span class="meta-label">주제어</span>
-                <p>바다, 드라이브, 친구, 짚라인, 조개구이, 휴식, 힐링</p>
+                <p id="modalRecordKeywords">바다, 드라이브, 친구, 짚라인, 조개구이, 휴식, 힐링</p>
               </div>
-              <div class="meta-chip-block meta-chip-block-wide">
-                <span class="meta-label">보존 가치</span>
-                <p>
+              <div class="meta-chip-block meta-chip-block-wide" id="modalNoteBlock">
+                <span class="meta-label" id="modalNoteLabel">보존 가치</span>
+                <p id="modalRecordNote">
                   친구와 함께 대천 바다에 다녀온 하루를 기록한 개인 기억. 바다를 보며 느낀 해방감,
                   갑작스러운 짚라인 체험, 저녁 식사와 휴식에 대한 생각의 변화가 담겨 있다.
                 </p>
@@ -470,7 +398,9 @@
 
           <div class="detail-tabs" role="tablist" aria-label="앨범 상세 탭">
             <button class="tab-button is-active" type="button" data-album-tab="scenes">장면 아카이브</button>
-            <button class="tab-button" type="button" data-album-tab="film">Memory Film</button>
+            <button class="tab-button" type="button" data-album-tab="film" id="filmTabButton">
+              Memory Film
+            </button>
           </div>
 
           <section class="tab-panel" data-tab-panel="scenes">
@@ -512,42 +442,20 @@
               <div class="film-card-copy">
                 <span class="card-tag">Memory Film</span>
                 <h3>기억 필름</h3>
-                <p>저장된 장면들을 하나의 흐름으로 다시 볼 수 있습니다.</p>
+                <p id="filmDescription">저장된 장면들을 하나의 흐름으로 다시 볼 수 있습니다.</p>
               </div>
               <div class="film-player is-fallback" id="filmPlayer">
                 <video id="memoryFilm" controls preload="metadata" playsinline>
-                  <source src="assets/archive-film.mp4" type="video/mp4" />
+                  <source id="memoryFilmSource" src="assets/archive-film.mp4" type="video/mp4" />
                 </video>
                 <div class="film-placeholder" id="filmPlaceholder">
                   <span class="card-tag">Memory Film</span>
-                  <strong>아직 기억 필름이 업로드되지 않았습니다.</strong>
-                  <p>기억 필름이 준비되면 이곳에서 바로 재생됩니다.</p>
+                  <strong id="filmEmptyMessage">아직 기억 필름이 업로드되지 않았습니다.</strong>
+                  <p id="filmEmptyCaption">기억 필름이 준비되면 이곳에서 바로 재생됩니다.</p>
                 </div>
               </div>
             </article>
           </section>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="previewModal" hidden>
-      <div class="modal-backdrop" data-close-modal="preview"></div>
-      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
-        <div class="modal-header">
-          <div>
-            <span class="card-tag">공개 아카이브</span>
-            <h2 id="previewTitle">중학교 입학식 날</h2>
-          </div>
-          <button class="modal-close" type="button" id="closePreviewModal" aria-label="미리보기 닫기">
-            닫기
-          </button>
-        </div>
-        <div class="modal-body preview-body">
-          <strong class="explore-id" id="previewId">RE-20180302</strong>
-          <div class="emotion-row" id="previewEmotionRow"></div>
-          <p id="previewDescription">
-            처음 입은 교복과 낯선 교실, 어색하게 앉아 있던 첫날의 기억.
-          </p>
         </div>
       </div>
     </div>
